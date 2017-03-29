@@ -6,7 +6,6 @@ import sys
 def main():
     args = sys.argv
     argcheck(args)
-    brainfuck(args)
 
 def manual(args):
     if len(args) == 1:
@@ -17,8 +16,6 @@ def manual(args):
     """)
     else:
         print(args[1])
-
-    pass
 
 def argcheck(args):
     #print(args[1])
