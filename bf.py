@@ -6,6 +6,7 @@ import sys
 def main():
     args = sys.argv
     argcheck(args)
+    brainfuck(args)
 
 def manual(args):
     if len(args) == 1:
