@@ -14,7 +14,7 @@ def argcheck(args):
     too many arguments.
     ''')
     else:
-        print(args[1])
+        brainfuck(args)
 
 def brainfuck(args):
     if args[1] == '-h':
