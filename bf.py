@@ -21,7 +21,7 @@ def argcheck(args):
         brainfuck(args)
 
 def brainfuck(args):
-    if args[1] == '-h':
+    if (args[1] == '-h') or (args[1] == '--help'):
         print("""
     help option.
     """)
