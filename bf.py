@@ -7,9 +7,13 @@ def main():
     args = sys.argv
     argcheck(args)
 
+def manual():
+    pass
+
 def argcheck(args):
     #print(args[1])
     if len(args) == 1:
+        manual()
         print('''
     file not found.
     ''')
