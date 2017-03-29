@@ -25,6 +25,8 @@ def brainfuck(args):
         print("""
     help option.
     """)
+    else:
+        print(args[1])
 
 
 if __name__ == '__main__':
