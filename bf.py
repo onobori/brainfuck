@@ -16,10 +16,16 @@ def argcheck(args):
     else:
         print(args[1])
 
+def brainfuck(args):
+    if args[1] == '-h':
+        print("""
+    help option.
+    """)
 
 def main():
     args = sys.argv
     argcheck(args)
+
 
 if __name__ == '__main__':
     main()
