@@ -3,6 +3,10 @@
 
 import sys
 
+def main():
+    args = sys.argv
+    argcheck(args)
+
 def argcheck(args):
     #print(args[1])
     if len(args) == 1:
@@ -21,10 +25,6 @@ def brainfuck(args):
         print("""
     help option.
     """)
-
-def main():
-    args = sys.argv
-    argcheck(args)
 
 
 if __name__ == '__main__':
