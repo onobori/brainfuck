@@ -9,6 +9,7 @@ def main():
 
 def manual(args):
     if len(args) == 1:
+        pass
     elif (args[1] == '-h') or (args[1] == '--help'):
         print("""
     help option.
