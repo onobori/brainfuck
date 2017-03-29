@@ -7,13 +7,21 @@ def main():
     args = sys.argv
     argcheck(args)
 
-def manual():
+def manual(args):
+    if len(args) == 1:
+    elif (args[1] == '-h') or (args[1] == '--help'):
+        print("""
+    help option.
+    """)
+    else:
+        print(args[1])
+
     pass
 
 def argcheck(args):
     #print(args[1])
     if len(args) == 1:
-        manual()
+        manual(args)
         print('''
     file not found.
     ''')
@@ -25,13 +33,13 @@ def argcheck(args):
         brainfuck(args)
 
 def brainfuck(args):
-    if (args[1] == '-h') or (args[1] == '--help'):
-        print("""
-    help option.
-    """)
-    else:
-        print(args[1])
+    manual()
+    f = open(args[1], 'r')
+    line = f.readline()
+    for l in line:
+        print(l)
 
+    f.close()
 
 if __name__ == '__main__':
     main()
