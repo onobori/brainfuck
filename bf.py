@@ -3,14 +3,8 @@
 
 import sys
 
-def main():
-    args = sys.argv
-    argcheck(args)
-
 def manual(args):
-    if len(args) == 1:
-        pass
-    elif (args[1] == '-h') or (args[1] == '--help'):
+    if (args[1] == '-h') or (args[1] == '--help'):
         print("""
     help option.
     """)
@@ -18,9 +12,7 @@ def manual(args):
         print(args[1])
 
 def argcheck(args):
-    #print(args[1])
     if len(args) == 1:
-        manual(args)
         print('''
     file not found.
     ''')
@@ -32,13 +24,22 @@ def argcheck(args):
         brainfuck(args)
 
 def brainfuck(args):
-    manual()
+    #manual(args)
     f = open(args[1], 'r')
     line = f.readline()
-    for l in line:
-        print(l)
-
+    #for l in line:
+    while line:
+        print(line.rstrip())
+        #print(line)
+        line = f.readline()
     f.close()
+
+def count(line):
+    pass
+
+def main():
+    args = sys.argv
+    argcheck(args)
 
 if __name__ == '__main__':
     main()
