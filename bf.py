@@ -24,7 +24,7 @@ def token(args):
             for l in line:
                 y.append(l)
 
-            print(y)
+            # print(y)
             line = f.readline()
 
 
