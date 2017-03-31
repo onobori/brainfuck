@@ -3,15 +3,6 @@
 # using: Python 3.5.3
 
 import sys
-import binascii
-
-def manual(args):
-    if (args[1] == '-h') or (args[1] == '--help'):
-        print("""
-    help option.
-    """)
-    else:
-        print(args[1])
 
 def argcheck(args):
     if len(args) == 1:
@@ -23,10 +14,9 @@ def argcheck(args):
     too many arguments.
     ''')
     else:
-        brainfuck(args)
+        token(args)
 
-def brainfuck(args):
-    #manual(args)
+def token(args):
     with open(args[1], 'r') as f:
         line = f.readline()
         #for l in line:
@@ -46,17 +36,20 @@ def brainfuck(args):
             #print(line.rstrip())
             y = []
             for l in line:
-                y.append(hex(ord(l)))
+                #y.append(hex(ord(l)))
+                #y.append(ord(l))
+                y.append(l)
                 # data = bytearray(y)
                 #print(y)
-                g = openwrite(data)
-                g.write(data)
+                # f = openwrite(data)
+                # f.write(data)
                 # for z in y:
                 #     print(z)
                 #     d = bytearray(z)
                 #     g.write(d)
 
             #g.write(d)
+            print(y)
             line = f.readline()
 
 
