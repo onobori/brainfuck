@@ -15,7 +15,6 @@ $ python bf.py [option] file
 sample:
 $ python bf.py example/hello.bf
 Brainfuck
-
     ''')
     elif len(args) > 3:
         print('''
