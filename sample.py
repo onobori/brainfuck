@@ -58,28 +58,42 @@ def calc(list):
     data = 0
     #listのインデックスをポインタとして使う
     ptr = 0
-    for l in list:
+    i = 0
+    for i in len(list):
         count += 1
-        if l == '+':
+        if list[i] == '+':
             data += 1
         # x.append(hex(ord(l)))
         # print(hex(ord(l)))
-        elif l == '-':
+        elif list[i] == '-':
             data -= 1
-        elif l == '.':
+        elif list[i] == '.':
             x.append(data)
             print(chr(data), end="")
-        # elif l == ',':
+        # elif list[i] == ',':
         #     print(chr(data), end="")
-        elif l == '[':
+        elif list[i] == '[':
         # # 別のリストを作成して[]内の処理を保存する
-            looplist = []
-            if l != ']':
-                looplist.append(l)
+            x.append(data)
+            begin = i
+            if x[ptr] != 0:
+                for j in range(ptr,len(list)):
+                    if j == ']':
+                        end = j
+                        break
             else:
-                print("looplist:", end="")
-                print(looplist)
-            
+                i = end
+                # i = end
+        elif list[i] == ']':
+            x.append(data)
+            # end = i
+            if x[ptr] == 0:
+        #     if list[i] != ']':
+        #         looplist.append(list[i])
+        #     else:
+        #         print("looplist:", end="")
+        #         print(looplist)
+        #     
         #     x.append(data)
         #     while x[ptr]:
         #         if l == '+':
@@ -118,18 +132,18 @@ def calc(list):
         #     pass
         #     # if x[ptr] != 0:
         #     #     x[ptr] = x[ptr] - 1
-        elif l == '>':
+        elif list[i] == '>':
             x.append(0)
             ptr += 1
-        elif l == '<':
+        elif list[i] == '<':
             ptr -= 1
         else:
             pass
 
     print("")
-    print("looplist:", end="")
-    print(looplist)
-    print(list)
+    # print("looplist:", end="")
+    # print(looplist)
+    # print(list)
     print("")
     #print(x)
     #print(len(x))
