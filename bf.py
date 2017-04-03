@@ -10,11 +10,11 @@ def main(args):
         print('''
 brainfuck interpreter: ver 0.9.0
 usage:
-$ python bf.py [option] file
+    $ python bf.py [option] file
 
 sample:
-$ python bf.py example/hello.bf
-Brainfuck
+    $ python bf.py example/hello.bf
+    Brainfuck
     ''')
     elif len(args) > 3:
         print('''
