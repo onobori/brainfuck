@@ -54,84 +54,55 @@ def token(args):
 # 
 
 def calc(list):
-    x = []
+    x = ['0']
     data = 0
-    #listのインデックスをポインタとして使う
     ptr = 0
+    begin = 0
+    end = 0
     i = 0
-    for i in len(list):
-        count += 1
+    for i in range(len(list)):
         if list[i] == '+':
             data += 1
-        # x.append(hex(ord(l)))
-        # print(hex(ord(l)))
         elif list[i] == '-':
             data -= 1
         elif list[i] == '.':
-            x.append(data)
+            x[ptr] = data
             print(chr(data), end="")
-        # elif list[i] == ',':
-        #     print(chr(data), end="")
         elif list[i] == '[':
-        # # 別のリストを作成して[]内の処理を保存する
-            x.append(data)
+            x[ptr] = data
             begin = i
+            looplist = []
             if x[ptr] != 0:
-                for j in range(ptr,len(list)):
-                    if j == ']':
+                for j in range(begin+1,len(list)):
+                    if list[j] != ']' and end <= j:
+                        looplist.append(list[j])
+                    elif list[j] == ']' and end <= j:
                         end = j
-                        break
+                    elif list[j] == ']' and end > j:
+                        pass
             else:
-                i = end
-                # i = end
-        elif list[i] == ']':
-            x.append(data)
-            # end = i
-            if x[ptr] == 0:
-        #     if list[i] != ']':
-        #         looplist.append(list[i])
-        #     else:
-        #         print("looplist:", end="")
-        #         print(looplist)
-        #     
-        #     x.append(data)
-        #     while x[ptr]:
-        #         if l == '+':
-        #             data += 1
-        #         # x.append(hex(ord(l)))
-        #         # print(hex(ord(l)))
-        #         elif l == '-':
-        #             data -= 1
-        #         elif l == '.':
-        #             x.append(data)
-        #             print(chr(data), end="")
-        #         elif l == '>':
-        #             ptr += 1
-        #         elif l == '<':
-        #             ptr -= 1
-        #         elif l == ']':
-        #             if x[ptr] == 0:
-        #                 break
-        #             else:
-        #                 continue
-        #         else:
-        #             pass
-        #     # x.append(data)
-        #     # print(x)
+                # unimplemented
+                pass
 
-        #     # print(x[ptr])
-        #     # print("start [")
-        #     # print(x[ptr])
-        #     # print(ptr)
-        #     # print("end [")
-        #     # while x[ptr]:
-        #     #     # x[ptr] = x[ptr] - 1
-        #     #     pass
-        # elif l == ']':
-        # x[ptr]がゼロでないなら[で保存した処理を繰り返す
-        #     pass
-        #     # if x[ptr] != 0:
-        #     #     x[ptr] = x[ptr] - 1
+        elif list[i] == ']':
+            x[ptr] = data
+            while x[ptr] != 0:
+                # calc(looplist)
+                for k in range(len(looplist)):
+                    if looplist[k] == '+':
+                        data += 1
+                    elif looplist[k] == '-':
+                        data -= 1
+                    elif looplist[k] == '.':
+                        x[ptr] = data
+                        print(chr(data), end="")
+                    elif looplist[k] == '>':
+                        x.append(0)
+                        ptr += 1
+                    elif looplist[k] == '<':
+                        ptr -= 1
+                    else:
+                        pass
         elif list[i] == '>':
             x.append(0)
             ptr += 1
@@ -144,6 +115,9 @@ def calc(list):
     # print("looplist:", end="")
     # print(looplist)
     # print(list)
+    print(begin, end="")
+    print("")
+    print(end, end="")
     print("")
     #print(x)
     #print(len(x))
