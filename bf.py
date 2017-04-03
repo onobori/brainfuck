@@ -10,7 +10,7 @@ def main(args):
         print('''
 brainfuck interpreter: ver 0.9.0
 usage:
- python bf_nonloop.py [option] file
+ python bf.py [option] file
     ''')
     elif len(args) > 3:
         print('''
