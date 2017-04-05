@@ -39,6 +39,7 @@ def brainfuck(list):
     #listのインデックスをポインタとして使う
     ptr = 0
     i = 0
+
     for i in range(len(list)):
         if list[i] == '+':
             x[ptr] += 1
