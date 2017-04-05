@@ -14,9 +14,9 @@ This is the brainfuck interpreter written in Python 3.
         ">"
         "<"
         "."
+        ","
   
       unimplemented:
-        ","
         "["
         "]"
   
