@@ -35,19 +35,20 @@ def token(args):
         brainfuck(list)
 
 def brainfuck(list):
-    x = []
-    data = 0
+    x = [0]
     #listのインデックスをポインタとして使う
     ptr = 0
     i = 0
     for i in range(len(list)):
         if list[i] == '+':
-            data += 1
+            x[ptr] += 1
         elif list[i] == '-':
-            data -= 1
+            x[ptr] -= 1
         elif list[i] == '.':
-            x.append(data)
-            print(chr(data), end="")
+            x.append(x[ptr])
+            print(chr(x[ptr]), end="")
+        elif list[i] == ',':
+            x[ptr] = ord(sys.stdin.read(1))
         elif list[i] == '>':
             x.append(0)
             ptr += 1
