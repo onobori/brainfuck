@@ -6,7 +6,7 @@ This is the brainfuck interpreter written in Python 3.
 
   This is A HOBBY PROGRAM.
   
-  This program status:
+  STATUS:
   
       implemented:
         "+"
