@@ -5,7 +5,7 @@
 import sys
 
 def main(args):
-    # option is unimplemented
+    # optionは未実装
     if len(args) < 2:
         print('''
 brainfuck interpreter: ver 0.9.0
@@ -56,6 +56,7 @@ def brainfuck(list):
             ptr -= 1
         else:
             pass
+        #TODO: '[', ']'の処理を追加し、ループを実装する
 
     print("")
 
