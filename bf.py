@@ -46,7 +46,6 @@ def brainfuck(list):
         elif list[i] == '-':
             x[ptr] -= 1
         elif list[i] == '.':
-            x.append(x[ptr])
             print(chr(x[ptr]), end="")
         elif list[i] == ',':
             x[ptr] = ord(sys.stdin.read(1))
