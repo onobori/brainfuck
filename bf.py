@@ -59,8 +59,6 @@ def brainfuck(list):
             pass
         #TODO: '[', ']'の処理を追加し、ループを実装する
 
-    print("")
-
 
 if __name__ == '__main__':
     args = sys.argv
